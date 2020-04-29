@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
 
 function App() {
+  let [word, wordGenerate] = useState(['First word']);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+    <p>Click to generate random word </p>
+  <h3>{word}</h3>
+    <button onClick={() => wordGenerate(word=Math.random().toString(36).substring(7))}>
+      Click me
+    </button>
+  </div>
   );
 }
+//Math.random().toString(36).substring(7);
 
 export default App;
